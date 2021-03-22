@@ -21,7 +21,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
 import {
   FontAwesomeModule,
   FaIconLibrary
@@ -43,9 +44,10 @@ import {
   faLightbulb,
   faWindowMaximize,
   faStream,
-  faBook
+  faBook,
+  faHome
 } from '@fortawesome/free-solid-svg-icons';
-import { faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 
 import { BigInputComponent } from './big-input/big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action/big-input-action.component';
@@ -73,6 +75,8 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
     MatSnackBarModule,
     MatSlideToggleModule,
     MatDividerModule,
+    MatToolbarModule,
+    MatDialogModule,
 
     FontAwesomeModule
   ],
@@ -106,6 +110,8 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
     MatSliderModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatToolbarModule,
+    MatDialogModule,
 
     FontAwesomeModule,
 
@@ -118,7 +124,7 @@ export class SharedModule {
   constructor(faIconLibrary: FaIconLibrary) {
     faIconLibrary.addIcons(
       faGithub,
-      faMediumM,
+      faLinkedin,
       faPlus,
       faEdit,
       faTrash,
@@ -135,7 +141,9 @@ export class SharedModule {
       faLightbulb,
       faWindowMaximize,
       faStream,
-      faBook
+      faBook,
+      faHome,
+      faMicrosoft
     );
   }
 }

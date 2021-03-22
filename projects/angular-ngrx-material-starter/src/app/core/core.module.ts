@@ -27,6 +27,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { environment } from '../../environments/environment';
 
@@ -65,14 +66,17 @@ import {
   faRocket,
   faPowerOff,
   faUserCircle,
-  faPlayCircle
+  faPlayCircle,
+  faHome
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
   faMediumM,
   faTwitter,
   faInstagram,
-  faYoutube
+  faYoutube,
+  faLinkedinIn,
+  faMicrosoft
 } from '@fortawesome/free-brands-svg-icons';
 
 export {
@@ -119,6 +123,7 @@ export function httpLoaderFactory(http: HttpClient) {
     MatTooltipModule,
     MatSnackBarModule,
     MatButtonModule,
+    MatDialogModule,
 
     // ngrx
     StoreModule.forRoot(reducers, { metaReducers }),
@@ -164,6 +169,7 @@ export function httpLoaderFactory(http: HttpClient) {
     MatTooltipModule,
     MatSnackBarModule,
     MatButtonModule,
+    MatDialogModule,
 
     // 3rd party
     FontAwesomeModule,
@@ -191,7 +197,10 @@ export class CoreModule {
       faMediumM,
       faTwitter,
       faInstagram,
-      faYoutube
+      faYoutube,
+      faLinkedinIn,
+      faHome,
+      faMicrosoft
     );
   }
 }

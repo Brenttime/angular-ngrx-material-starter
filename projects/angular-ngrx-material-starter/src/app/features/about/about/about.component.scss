@@ -11,6 +11,9 @@ h2 {
   text-transform: uppercase;
 }
 
+.portfolio-div {
+  padding-bottom:2%; 
+}
 .background {
   padding: 80px 0 0 0;
   position: relative;
@@ -64,7 +67,6 @@ h2 {
     left: 0;
     bottom: 0;
     right: 0;
-    background: url('../../../../assets/intro.jpg') no-repeat center top;
     background-size: cover;
     opacity: 0.7;
     content: '';

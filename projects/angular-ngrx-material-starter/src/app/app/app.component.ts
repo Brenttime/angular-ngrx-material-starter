@@ -2,6 +2,7 @@ import browser from 'browser-detect';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 import { environment as env } from '../../environments/environment';
 
@@ -19,6 +20,7 @@ import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeLanguage
 } from '../core/settings/settings.actions';
+import { SettingsContainerComponent } from '../features/settings/settings/settings-container.component';
 
 @Component({
   selector: 'anms-root',
@@ -34,12 +36,10 @@ export class AppComponent implements OnInit {
   logo = require('../../assets/logo.png').default;
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
   navigation = [
-    { link: 'about', label: 'anms.menu.about' },
-    { link: 'feature-list', label: 'anms.menu.features' },
-    { link: 'examples', label: 'anms.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,
+    { link: 'about', label: 'anms.menu.about' },
     { link: 'settings', label: 'anms.menu.settings' }
   ];
 
@@ -50,7 +50,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private storageService: LocalStorageService
+    private storageService: LocalStorageService,
+    public dialog: MatDialog
   ) {}
 
   private static isIEorEdgeOrSafari() {
@@ -83,5 +84,12 @@ export class AppComponent implements OnInit {
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(actionSettingsChangeLanguage({ language }));
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(SettingsContainerComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 }
